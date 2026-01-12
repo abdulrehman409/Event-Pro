@@ -10,7 +10,7 @@ const GeminiAssistant: React.FC = () => {
   
   const audioContextRef = useRef<AudioContext | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
-  const sessionRef = useRef<any>(null); // Store the actual session to close it
+  const sessionRef = useRef<any>(null); 
   const nextStartTimeRef = useRef<number>(0);
   const sourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
 
@@ -63,7 +63,6 @@ const GeminiAssistant: React.FC = () => {
       const outputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
       audioContextRef.current = outputCtx;
 
-      // Ensure contexts are running (required for some browsers)
       await inputCtx.resume();
       await outputCtx.resume();
 
@@ -102,7 +101,9 @@ const GeminiAssistant: React.FC = () => {
             scriptProcessor.connect(inputCtx.destination);
           },
           onmessage: async (message: LiveServerMessage) => {
-            const audioBase64 = message.serverContent?.modelTurn?.parts[0]?.inlineData?.data;
+            // FIXED: Added optional chaining to access parts safely
+            const audioBase64 = message.serverContent?.modelTurn?.parts?.[0]?.inlineData?.data;
+            
             if (audioBase64 && audioContextRef.current) {
               const ctx = audioContextRef.current;
               nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
@@ -126,11 +127,11 @@ const GeminiAssistant: React.FC = () => {
 
             if (message.serverContent?.outputTranscription) {
               const text = message.serverContent.outputTranscription.text;
-              setTranscript(prev => [...prev.slice(-4), `AI: ${text}`]);
+              if (text) setTranscript(prev => [...prev.slice(-4), `AI: ${text}`]);
             }
             if (message.serverContent?.inputTranscription) {
               const text = message.serverContent.inputTranscription.text;
-              setTranscript(prev => [...prev.slice(-4), `You: ${text}`]);
+              if (text) setTranscript(prev => [...prev.slice(-4), `You: ${text}`]);
             }
           },
           onerror: (e) => {
