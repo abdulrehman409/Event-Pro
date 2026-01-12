@@ -1,7 +1,16 @@
 {
   "name": "Event Countdown Pro",
-  "description": "A minimal, Android-style event countdown timer with integrated Gemini AI for event discovery and real-time voice assistance.",
+  "description": "Minimal event countdown with Gemini AI integration. Play Store Ready.",
+  "version": "1.0.0",
   "requestFramePermissions": [
-    "microphone"
-  ]
+    "microphone",
+    "camera"
+  ],
+  "android": {
+    "packageName": "com.example.countdown",
+    "permissions": [
+      "INTERNET",
+      "RECORD_AUDIO"
+    ]
+  }
 }

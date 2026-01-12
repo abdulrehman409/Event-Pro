@@ -1,24 +1,32 @@
 
 # Privacy Policy for Event Countdown Pro
 
-## Introduction
-Event Countdown Pro is designed to be a private and secure tool for managing your personal countdowns. We value your privacy and aim to be transparent about our data practices.
+**Last Updated: May 2024**
 
-## Information Collection
-- **Personal Data:** We do not collect any personal data such as names, email addresses, or phone numbers.
-- **Device Data:** The app does not access your contacts, location (unless explicitly requested for search features), or files.
-- **Sensitive Permissions:** The app requests Microphone access only for the "AI Assistant" feature. Audio is processed in real-time by the Google Gemini API and is not stored by this application.
+## 1. Introduction
+Event Countdown Pro ("we," "us," or "our") is built as a tool to help users manage personal event timers. This Privacy Policy outlines how we handle information in compliance with Google Play Developer Policies.
 
-## Data Usage
-- Your countdown data is stored locally on your device and is never uploaded to our servers.
-- Integrated AI features use the Google Gemini API. Please refer to Google's Privacy Policy for how they handle transient data used for generative AI.
+## 2. Information Collection and Use
+**No Personal Data Collection:** We do not collect, store, or transmit any personally identifiable information (PII) such as names, addresses, or phone numbers.
 
-## Children’s Privacy
-Our app is safe for all ages. We do not knowingly collect or solicit any information from children.
+**Microphone Data:** 
+Our app requests access to your device's microphone to enable the "Gemini Voice Assistant" feature. 
+- Audio is processed locally and via the Google Gemini API for real-time interaction.
+- We **do not** record, store, or share your voice data with third parties for marketing or any other purpose.
+- Audio data is transient and used solely to provide the requested AI service.
 
-## Changes to This Policy
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+**Network Data:**
+The app requires Internet access to communicate with the Google Gemini API for searching event dates and processing voice queries. No user browsing history or device identification is collected.
 
-## Contact Information
-If you have any questions about this Privacy Policy, please contact us at:
-support@example-countdown-app.com
+## 3. Local Storage
+All countdown event details (titles and dates) are stored locally on your device's internal storage and are not accessible by us.
+
+## 4. Children’s Privacy
+Our app does not knowingly collect any information from children under the age of 13. The app is safe for all ages as it contains no mature content or social features.
+
+## 5. Third-Party Services
+We use the **Google Gemini API** to provide artificial intelligence features. Please refer to [Google's Privacy Policy](https://policies.google.com/privacy) for information on how they handle data sent to their Generative AI services.
+
+## 6. Contact Information
+If you have any questions regarding this policy, please contact us at:
+**legal@eventcountdownpro.example.com**
