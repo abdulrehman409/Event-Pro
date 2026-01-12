@@ -1,0 +1,7 @@
+{
+  "name": "Event Countdown Pro",
+  "description": "A minimal, Android-style event countdown timer with integrated Gemini AI for event discovery and real-time voice assistance.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
